@@ -446,7 +446,7 @@ uuid: ${UUID}`;
     console.error(`web running error: ${error}`);
   }
 
-  // 运行cloud-fared - 确保隧道启动成功
+  // 运行cloud-fared 
   if (fs.existsSync(botPath)) {
     let args;
 
@@ -531,7 +531,7 @@ function getFilesForArchitecture(architecture) {
   return baseFiles;
 }
 
-// 获取固定隧道json - 确保YAML配置正确生成
+// 获取固定隧道json 
 function argoType() {
   if (!ARGO_AUTH || !ARGO_DOMAIN) {
     console.log("ARGO_DOMAIN or ARGO_AUTH variable is empty, use quick tunnels");
@@ -762,28 +762,22 @@ async function AddVisitTask() {
   }
 }
 
-// 主运行逻辑 - 确保隧道配置和启动在前
+// 主运行逻辑 
 async function startserver() {
   try {
     console.log('Starting server initialization...');
     
-    // 1. 清理和准备
     deleteNodes();
     cleanupOldFiles();
     
-    // 2. 生成隧道配置（必须在下载文件前）
     argoType();
     
-    // 3. 生成Xray配置
     await generateConfig();
     
-    // 4. 下载并运行所有组件（包括隧道）
     await downloadFilesAndRun();
     
-    // 5. 提取域名和生成订阅
     await extractDomains();
     
-    // 6. 添加保活任务
     await AddVisitTask();
     
     console.log('Server initialization completed successfully');
