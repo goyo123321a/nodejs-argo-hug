@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>红酒世界 | Wine World</title>
+    <title>Campus Blog - School Life & Study Tips</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f9f5f0;
+            background-color: #f5f9fc;
             color: #333;
             line-height: 1.6;
         }
@@ -24,584 +25,539 @@
             padding: 0 20px;
         }
         
-        /* 头部样式 */
+        /* Header Styles */
         header {
-            background: linear-gradient(rgba(90, 0, 0, 0.8), rgba(60, 0, 0, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%235a0000"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%237a0000" stroke-width="2"/></svg>');
-            color: #fff;
-            padding: 80px 0 40px;
-            text-align: center;
+            background: linear-gradient(135deg, #1a5fb4 0%, #2d87d0 100%);
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
-        }
-        
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30px;
-            background: linear-gradient(to bottom right, transparent 49%, #f9f5f0 50%);
         }
         
         .header-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-        
-        /* 导航样式 */
-        nav {
-            background-color: #5a0000;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        
-        .nav-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
-        .nav-links {
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            color: #ffd43b;
+        }
+        
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .logo p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        nav ul {
             display: flex;
             list-style: none;
         }
         
-        .nav-links li {
-            margin: 0;
+        nav ul li {
+            margin-left: 25px;
         }
         
-        .nav-links a {
-            color: #fff;
+        nav ul li a {
+            color: white;
             text-decoration: none;
-            padding: 15px 25px;
-            display: block;
-            transition: background-color 0.3s;
-            font-weight: 300;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
         
-        .nav-links a:hover {
-            background-color: #7a0000;
+        nav ul li a:hover, nav ul li a.active {
+            background-color: rgba(255, 255, 255, 0.2);
         }
         
-        /* 主体内容样式 */
-        section {
-            padding: 80px 0;
+        /* Main Content */
+        main {
+            padding: 40px 0;
         }
         
-        .section-title {
+        .page-header {
             text-align: center;
-            margin-bottom: 60px;
-            color: #5a0000;
-            position: relative;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: #d4af37;
-            margin: 15px auto 0;
+        .page-header h2 {
+            color: #1a5fb4;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
         
-        .content-grid {
+        .page-header p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Posts */
+        .blog-posts {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
         
-        .content-card {
-            background: #fff;
-            border-radius: 8px;
+        .post-card {
+            background-color: white;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
         }
         
-        .content-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .card-image {
-            height: 200px;
-            background-color: #5a0000;
-            background-size: cover;
-            background-position: center;
+        .post-header {
+            padding: 25px;
+            background: linear-gradient(to right, #1a5fb4, #2d87d0);
+            color: white;
         }
         
-        .card-content {
+        .post-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .post-meta {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .post-meta i {
+            margin-right: 8px;
+        }
+        
+        .post-meta span {
+            margin-right: 20px;
+        }
+        
+        .post-content {
             padding: 25px;
         }
         
-        .card-title {
-            color: #5a0000;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            font-weight: 400;
-        }
-        
-        .card-text {
+        .post-content p {
+            margin-bottom: 20px;
             color: #555;
-            margin-bottom: 15px;
         }
         
-        /* 历史时间线样式 */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+        .post-content ul, .post-content ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
         }
         
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #d4af37;
-            transform: translateX(-50%);
+        .post-content li {
+            margin-bottom: 8px;
         }
         
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-            width: 50%;
-            padding: 0 40px;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            background: #fff;
+        .highlight {
+            background-color: #f0f7ff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
+            border-left: 4px solid #1a5fb4;
+            border-radius: 4px;
+            margin: 20px 0;
         }
         
-        .timeline-content::after {
-            content: "";
-            position: absolute;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            background: #fff;
-            transform: rotate(45deg);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::after {
-            left: -10px;
-        }
-        
-        .timeline-year {
-            position: absolute;
-            top: -15px;
-            background: #5a0000;
-            color: #fff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 300;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-year {
-            right: -20px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-year {
-            left: -20px;
-        }
-        
-        /* 葡萄品种样式 */
-        .grape-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .grape-card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        
-        .grape-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .grape-image {
-            height: 150px;
-            background-color: #7a0000;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .grape-content {
-            padding: 20px;
-        }
-        
-        .grape-name {
-            color: #5a0000;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        /* 页脚样式 */
+        /* Footer */
         footer {
-            background-color: #2a0000;
-            color: #fff;
-            padding: 60px 0 30px;
+            background-color: #1a2b4c;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
         }
         
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
         }
         
-        .footer-column h3 {
-            color: #d4af37;
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 20px;
             margin-bottom: 20px;
-            font-weight: 400;
-            font-size: 1.2rem;
         }
         
-        .footer-links {
-            list-style: none;
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffd43b;
         }
         
-        .footer-links li {
-            margin-bottom: 10px;
+        .footer-section p {
+            opacity: 0.8;
+            margin-bottom: 15px;
         }
         
-        .footer-links a {
-            color: #ccc;
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            margin: 0 8px;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
         }
         
-        .footer-links a:hover {
-            color: #d4af37;
+        .social-icons a:hover {
+            background-color: #1a5fb4;
+            transform: translateY(-3px);
         }
         
         .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #444;
-            color: #999;
-            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
         }
         
-        /* 响应式设计 */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .content-grid {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .page-header h2 {
+                font-size: 2rem;
+            }
+            
+            .blog-posts {
                 grid-template-columns: 1fr;
             }
             
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 80px;
-                padding-right: 0;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-year,
-            .timeline-item:nth-child(even) .timeline-year {
-                left: 10px;
-                right: auto;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: -10px;
-                right: auto;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
+            .footer-content {
                 flex-direction: column;
             }
+        }
+        
+        /* Page Navigation */
+        .page-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .page-btn {
+            background-color: white;
+            color: #1a5fb4;
+            border: 2px solid #1a5fb4;
+            padding: 12px 25px;
+            margin: 0 10px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .page-btn:hover {
+            background-color: #1a5fb4;
+            color: white;
+        }
+        
+        .page-btn.active {
+            background-color: #1a5fb4;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <!-- 头部 -->
+    <!-- Header Section -->
     <header>
-        <div class="container header-content">
-            <h1>红酒世界 | Wine World</h1>
-            <p class="subtitle">探索红酒的优雅与奥秘 | Discover the Elegance and Mystery of Wine</p>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div>
+                        <h1>Campus Blog</h1>
+                        <p>Sharing School Life & Study Experiences</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#school-family">School as Home</a></li>
+                        <li><a href="#study-tips">Study Tips</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- 导航 -->
-    <nav>
-        <div class="container nav-container">
-            <ul class="nav-links">
-                <li><a href="#intro">红酒简介 | Introduction</a></li>
-                <li><a href="#history">历史渊源 | History</a></li>
-                <li><a href="#types">红酒分类 | Types</a></li>
-                <li><a href="#grapes">葡萄品种 | Grapes</a></li>
-                <li><a href="#tasting">品鉴艺术 | Tasting</a></li>
-            </ul>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header" id="home">
+                <h2>Welcome to Our Campus Blog</h2>
+                <p>A place where students share their experiences, thoughts, and tips about school life and learning. Explore our articles below to get inspired!</p>
+            </div>
+
+            <!-- Page Navigation -->
+            <div class="page-navigation">
+                <a href="#school-family" class="page-btn active">School as Home</a>
+                <a href="#study-tips" class="page-btn">Study Tips</a>
+            </div>
+
+            <!-- Blog Posts -->
+            <div class="blog-posts">
+                <!-- School as Home Post -->
+                <article class="post-card" id="school-family">
+                    <div class="post-header">
+                        <h3>School Is My Second Home</h3>
+                        <div class="post-meta">
+                            <span><i class="fas fa-user"></i> Alex Johnson</span>
+                            <span><i class="fas fa-calendar"></i> March 15, 2023</span>
+                            <span><i class="fas fa-tag"></i> School Life</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>For many students, school is more than just a place of learning. It's a second home where we spend a significant portion of our lives. From the early morning bell to the final dismissal, school shapes our daily routines, friendships, and personal growth.</p>
+                        
+                        <p>When I first started at Lincoln High School, I saw it as just another building with classrooms and teachers. But over time, I realized it was much more. The hallways that seemed confusing at first became familiar pathways. The classmates I didn't know became close friends. The teachers I was nervous to approach became mentors and guides.</p>
+                        
+                        <div class="highlight">
+                            <p><strong>Why school feels like home:</strong> It's a place of consistency, community, and personal development where we feel safe to explore, make mistakes, and grow.</p>
+                        </div>
+                        
+                        <p>School provides us with:</p>
+                        <ul>
+                            <li><strong>A sense of belonging:</strong> Through clubs, teams, and classroom communities</li>
+                            <li><strong>Routine and structure:</strong> Creating a stable environment for learning and growth</li>
+                            <li><strong>Support systems:</strong> Teachers, counselors, and staff who genuinely care about our wellbeing</li>
+                            <li><strong>Opportunities for self-discovery:</strong> Trying new activities, subjects, and leadership roles</li>
+                            <li><strong>Lasting friendships:</strong> Bonds formed over shared experiences and challenges</li>
+                        </ul>
+                        
+                        <p>Just like a home, school has its challenges too. There are difficult assignments, stressful exams, and occasional conflicts. But these challenges help us develop resilience, problem-solving skills, and emotional intelligence—all essential tools for life beyond school walls.</p>
+                        
+                        <p>As I enter my final year, I appreciate more than ever how this institution has shaped me. The classrooms where I discovered new passions, the library where I found quiet concentration, the cafeteria where I shared laughs with friends—all these spaces have become part of my identity. School isn't just where I go to learn; it's where I've grown into the person I am today.</p>
+                    </div>
+                </article>
+
+                <!-- Study Tips Post -->
+                <article class="post-card" id="study-tips">
+                    <div class="post-header">
+                        <h3>Effective Study Habits That Actually Work</h3>
+                        <div class="post-meta">
+                            <span><i class="fas fa-user"></i> Maria Chen</span>
+                            <span><i class="fas fa-calendar"></i> April 2, 2023</span>
+                            <span><i class="fas fa-tag"></i> Academic Success</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>After three years of high school and countless exams, I've discovered that effective studying isn't about how many hours you put in, but how you use those hours. Here are the study strategies that have helped me maintain a 4.0 GPA while still having time for extracurricular activities and social life.</p>
+                        
+                        <h4>1. The Pomodoro Technique</h4>
+                        <p>Instead of marathon study sessions, I study in focused 25-minute blocks with 5-minute breaks in between. After four cycles, I take a longer 15-30 minute break. This keeps my mind fresh and prevents burnout.</p>
+                        
+                        <h4>2. Active Recall</h4>
+                        <p>Simply rereading notes is passive and ineffective. Instead, I test myself regularly. I use flashcards, practice questions, or just cover up parts of my notes and try to recall the information. This strengthens memory pathways.</p>
+                        
+                        <div class="highlight">
+                            <p><strong>Key insight:</strong> Your brain learns better when it has to work to retrieve information, not just recognize it.</p>
+                        </div>
+                        
+                        <h4>3. Spaced Repetition</h4>
+                        <p>I review material at increasing intervals—first after one day, then three days, then a week, then two weeks. This takes advantage of how our brains consolidate memories over time.</p>
+                        
+                        <h4>4. Interleaving Subjects</h4>
+                        <p>Instead of studying one subject for hours, I mix different subjects in a single study session. Switching between math, history, and biology in one afternoon helps me make connections between different areas of knowledge and keeps me engaged.</p>
+                        
+                        <h4>5. The Feynman Technique</h4>
+                        <p>To truly understand a concept, I try to explain it in simple terms as if teaching it to someone who knows nothing about the topic. If I can't simplify it, I don't really understand it yet.</p>
+                        
+                        <h4>6. Optimal Study Environment</h4>
+                        <p>I've created a dedicated study space that's:</p>
+                        <ul>
+                            <li>Quiet and free from distractions (phone on silent in another room)</li>
+                            <li>Well-lit with natural light when possible</li>
+                            <li>Organized with all necessary materials at hand</li>
+                            <li>Comfortable but not too comfortable (a proper chair at a desk, not my bed)</li>
+                        </ul>
+                        
+                        <h4>7. Healthy Study Habits</h4>
+                        <p>Learning isn't just mental—it's physical too. I make sure to:</p>
+                        <ol>
+                            <li>Get 7-8 hours of sleep each night (critical for memory consolidation)</li>
+                            <li>Exercise regularly to boost brain function</li>
+                            <li>Stay hydrated and eat brain-healthy foods (nuts, berries, fish)</li>
+                            <li>Take real breaks that involve moving away from my study space</li>
+                        </ol>
+                        
+                        <p>The most important lesson I've learned is that effective studying is personalized. What works for your friend might not work for you. Experiment with these techniques, track what helps you retain information best, and build your own customized study system.</p>
+                    </div>
+                </article>
+            </div>
         </div>
-    </nav>
-
-    <!-- 主体内容 -->
-    <main class="container">
-        <!-- 红酒简介 -->
-        <section id="intro">
-            <h2 class="section-title">红酒简介 | Introduction</h2>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #7a0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">什么是红酒？ | What is Red Wine?</h3>
-                        <p class="card-text">Red wine is an alcoholic beverage made from dark-colored grape varieties. The color of red wine ranges from intense violet, typical of young wines, to brick red for mature wines and brown for older red wines.</p>
-                        <p class="card-text">红酒是由深色葡萄品种酿制而成的酒精饮料。红酒的颜色从年轻葡萄酒典型的深紫色，到成熟葡萄酒的砖红色，再到陈年葡萄酒的棕色。</p>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #5a0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">酿造过程 | Winemaking Process</h3>
-                        <p class="card-text">The process of making red wine involves harvesting grapes, crushing and destemming, fermentation, pressing, aging, and bottling. The key difference from white wine production is that red wine fermentation includes the grape skins, which impart color, tannins, and flavor.</p>
-                        <p class="card-text">红酒的酿造过程包括采摘葡萄、压榨去梗、发酵、压榨、陈酿和装瓶。与白葡萄酒生产的主要区别在于，红葡萄酒的发酵包括葡萄皮，这赋予了颜色、单宁和风味。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 历史渊源 -->
-        <section id="history">
-            <h2 class="section-title">历史渊源 | History</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">6000 BC</div>
-                    <div class="timeline-content">
-                        <h3>早期起源 | Early Origins</h3>
-                        <p>Evidence of early wine production dates back to 6000 BC in Georgia. The earliest known winery was discovered in Armenia, dating to around 4100 BC.</p>
-                        <p>早期葡萄酒生产的证据可以追溯到公元前6000年的格鲁吉亚。已知最早的酿酒厂在亚美尼亚发现，可追溯到公元前4100年左右。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">Roman Era</div>
-                    <div class="timeline-content">
-                        <h3>罗马时期 | Roman Era</h3>
-                        <p>The Romans significantly advanced viticulture and winemaking techniques, establishing vineyards throughout their empire, including in France, Spain, and Germany.</p>
-                        <p>罗马人显著推进了葡萄栽培和酿酒技术，在整个帝国建立了葡萄园，包括法国、西班牙和德国。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">Middle Ages</div>
-                    <div class="timeline-content">
-                        <h3>中世纪 | Middle Ages</h3>
-                        <p>During the Middle Ages, the Catholic Church became a staunch supporter of wine production, as wine was necessary for the celebration of Mass. Monastic orders preserved and developed winemaking knowledge.</p>
-                        <p>在中世纪，天主教会成为葡萄酒生产的坚定支持者，因为葡萄酒是庆祝弥撒所必需的。修道会保存并发展了酿酒知识。</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">19th Century</div>
-                    <div class="timeline-content">
-                        <h3>现代发展 | Modern Development</h3>
-                        <p>The 19th century saw major developments in wine technology, including pasteurization and understanding of fermentation. This period also saw the spread of European grape varieties to New World wine regions.</p>
-                        <p>19世纪见证了葡萄酒技术的重大发展，包括巴氏杀菌法和发酵原理的理解。这一时期也见证了欧洲葡萄品种向新世界葡萄酒产区的传播。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 红酒分类 -->
-        <section id="types">
-            <h2 class="section-title">红酒分类 | Types</h2>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #8b0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">轻酒体红酒 | Light-Bodied Reds</h3>
-                        <p class="card-text">Light-bodied red wines have fewer tannins and lower alcohol content. They are typically bright, fresh, and easy to drink. Examples include Pinot Noir, Gamay, and Grenache.</p>
-                        <p class="card-text">轻酒体红葡萄酒单宁较少，酒精含量较低。它们通常明亮、清新且易于饮用。例子包括黑皮诺、佳美和歌海娜。</p>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #800000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">中等酒体红酒 | Medium-Bodied Reds</h3>
-                        <p class="card-text">Medium-bodied reds strike a balance between light and full-bodied wines. They offer more complexity than light-bodied wines but are not as heavy as full-bodied ones. Examples include Merlot, Sangiovese, and Zinfandel.</p>
-                        <p class="card-text">中等酒体红葡萄酒在轻酒体和重酒体葡萄酒之间取得平衡。它们比轻酒体葡萄酒提供更多的复杂性，但不像重酒体葡萄酒那样厚重。例子包括梅洛、桑娇维塞和仙粉黛。</p>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #660000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">重酒体红酒 | Full-Bodied Reds</h3>
-                        <p class="card-text">Full-bodied red wines are rich, robust, and high in tannins and alcohol. They often benefit from aging and pair well with hearty foods. Examples include Cabernet Sauvignon, Syrah, and Malbec.</p>
-                        <p class="card-text">重酒体红葡萄酒浓郁、醇厚，单宁和酒精含量高。它们通常受益于陈年，并与丰盛的食物搭配良好。例子包括赤霞珠、西拉和马尔贝克。</p>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #4d0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">甜红葡萄酒 | Sweet Red Wines</h3>
-                        <p class="card-text">Sweet red wines have noticeable residual sugar, making them sweet to taste. They range from slightly sweet to very sweet and are often served with desserts or as dessert themselves. Examples include Port, Brachetto d'Acqui, and Recioto della Valpolicella.</p>
-                        <p class="card-text">甜红葡萄酒有明显的残留糖分，使它们尝起来甜美。它们从微甜到非常甜不等，通常与甜点一起供应或作为甜点本身。例子包括波特酒、布拉凯托达魁和雷乔托瓦坡里切拉。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 葡萄品种 -->
-        <section id="grapes">
-            <h2 class="section-title">主要葡萄品种 | Major Grape Varieties</h2>
-            <div class="grape-grid">
-                <div class="grape-card">
-                    <div class="grape-image" style="background-color: #7a0000;"></div>
-                    <div class="grape-content">
-                        <h3 class="grape-name">赤霞珠 | Cabernet Sauvignon</h3>
-                        <p>One of the world's most widely recognized red wine grape varieties, known for its thick, durable skin and the vine's resistance to the elements.</p>
-                        <p>世界上最广泛认可的红葡萄酒葡萄品种之一，以其厚实耐用的果皮和藤蔓对环境的抵抗力而闻名。</p>
-                    </div>
-                </div>
-                <div class="grape-card">
-                    <div class="grape-image" style="background-color: #8b0000;"></div>
-                    <div class="grape-content">
-                        <h3 class="grape-name">梅洛 | Merlot</h3>
-                        <p>A dark blue-colored wine grape variety that is used as both a blending grape and for varietal wines.</p>
-                        <p>一种深蓝色的葡萄酒葡萄品种，既用作混合葡萄，也用于酿造单一品种葡萄酒。</p>
-                    </div>
-                </div>
-                <div class="grape-card">
-                    <div class="grape-image" style="background-color: #900000;"></div>
-                    <div class="grape-content">
-                        <h3 class="grape-name">黑皮诺 | Pinot Noir</h3>
-                        <p>A red wine grape variety of the species Vitis vinifera. The name may also refer to wines created predominantly from Pinot Noir grapes.</p>
-                        <p>一种属于欧亚葡萄种类的红葡萄酒葡萄品种。该名称也可能指主要由黑皮诺葡萄酿造的葡萄酒。</p>
-                    </div>
-                </div>
-                <div class="grape-card">
-                    <div class="grape-image" style="background-color: #a00000;"></div>
-                    <div class="grape-content">
-                        <h3 class="grape-name">西拉 | Syrah/Shiraz</h3>
-                        <p>A dark-skinned grape variety grown throughout the world and used primarily to produce red wine.</p>
-                        <p>一种在世界各地种植的深色葡萄品种，主要用于生产红葡萄酒。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 品鉴艺术 -->
-        <section id="tasting">
-            <h2 class="section-title">品鉴艺术 | The Art of Tasting</h2>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #5a0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">视觉评估 | Visual Examination</h3>
-                        <p class="card-text">Observe the wine's color, intensity, and viscosity. Tilt the glass against a white background to better see the color gradient from the center to the rim.</p>
-                        <p class="card-text">观察葡萄酒的颜色、强度和粘度。将酒杯倾斜对着白色背景，以更好地看到从中心到边缘的颜色渐变。</p>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #6a0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">嗅觉体验 | Olfactory Experience</h3>
-                        <p class="card-text">Gently swirl the wine in your glass to release its aromas. Take a series of short sniffs to identify the various scent notes, from fruity to earthy, floral to spicy.</p>
-                        <p class="card-text">轻轻旋转酒杯中的葡萄酒以释放其香气。进行一系列短暂的嗅闻，以识别各种香气，从果香到土香，从花香到香料味。</p>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #7a0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">味觉感受 | Taste Sensation</h3>
-                        <p class="card-text">Take a small sip and let the wine spread across your palate. Identify the primary tastes: sweetness, acidity, bitterness, and saltiness, along with the wine's body and tannin structure.</p>
-                        <p class="card-text">小酌一口，让葡萄酒在口中扩散。识别主要味道：甜味、酸味、苦味和咸味，以及葡萄酒的酒体和单宁结构。</p>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-image" style="background-color: #8a0000;"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">余韵与评价 | Finish and Evaluation</h3>
-                        <p class="card-text">Pay attention to the aftertaste or finish. How long do the flavors persist? Consider the wine's balance, complexity, and overall quality before forming your final assessment.</p>
-                        <p class="card-text">注意余味或回味。风味持续多长时间？在形成最终评估之前，考虑葡萄酒的平衡度、复杂性和整体质量。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- 页脚 -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>关于我们 | About Us</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">我们的故事 | Our Story</a></li>
-                        <li><a href="#">团队介绍 | Our Team</a></li>
-                        <li><a href="#">联系方式 | Contact Us</a></li>
-                    </ul>
+                <div class="footer-section">
+                    <h3>About This Blog</h3>
+                    <p>This campus blog is created by students for students. Our mission is to share authentic experiences and practical advice about school life and learning.</p>
+                    <p>We believe in the power of shared knowledge and community support in the educational journey.</p>
                 </div>
-                <div class="footer-column">
-                    <h3>红酒知识 | Wine Knowledge</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">酿造工艺 | Winemaking</a></li>
-                        <li><a href="#">产区介绍 | Regions</a></li>
-                        <li><a href="#">搭配指南 | Pairing Guide</a></li>
-                    </ul>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#school-family" style="color: white; text-decoration: none;">School as Home</a></p>
+                    <p><a href="#study-tips" style="color: white; text-decoration: none;">Study Tips</a></p>
+                    <p><a href="#home" style="color: white; text-decoration: none;">Home</a></p>
                 </div>
-                <div class="footer-column">
-                    <h3>关注我们 | Follow Us</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">微信 | WeChat</a></li>
-                        <li><a href="#">微博 | Weibo</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> blog@campus.edu</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Student Center, Room 205</p>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
+            
             <div class="copyright">
-                <p>&copy; 2023 红酒世界 | Wine World. 保留所有权利 | All rights reserved.</p>
+                <p>&copy; 2023 Campus Blog. All rights reserved. | Designed by Student Web Team</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a, .page-btn').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active state for navigation
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                if(this.getAttribute('href').startsWith('#')) {
+                    this.classList.add('active');
+                    
+                    // Scroll to target section
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        const targetSection = document.querySelector(targetId);
+                        if(targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Update active state for page buttons
+        document.querySelectorAll('.page-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.page-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // Highlight current section while scrolling
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('article');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    currentSection = '#' + section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Also update page buttons based on scroll position
+            const schoolFamilySection = document.querySelector('#school-family');
+            const studyTipsSection = document.querySelector('#study-tips');
+            const pageButtons = document.querySelectorAll('.page-btn');
+            
+            if(window.scrollY >= schoolFamilySection.offsetTop - 150 && 
+               window.scrollY < studyTipsSection.offsetTop - 150) {
+                pageButtons[0].classList.add('active');
+                pageButtons[1].classList.remove('active');
+            } else if(window.scrollY >= studyTipsSection.offsetTop - 150) {
+                pageButtons[0].classList.remove('active');
+                pageButtons[1].classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
