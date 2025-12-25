@@ -3,281 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protecting Our Community Environment</title>
+    <title>NeuralNet Pro - Advanced AI Model</title>
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --accent-color: #06b6d4;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: #f0f8f0;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        header {
-            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        
-        .content-section {
-            background: white;
-            border-radius: 15px;
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
             padding: 40px;
-            margin: 40px 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        h2 {
-            color: #2e7d32;
-            margin-bottom: 25px;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        h2 i {
-            margin-right: 15px;
-            font-size: 1.8rem;
-        }
-        
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .tip-card {
-            background: #e8f5e9;
-            border-radius: 12px;
-            padding: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #4caf50;
-        }
-        
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .tip-card h3 {
-            color: #1b5e20;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-        
-        .quote {
-            background: #e8f5e9;
-            border-left: 5px solid #4caf50;
-            padding: 25px;
-            margin: 30px 0;
-            font-style: italic;
-            font-size: 1.2rem;
-            border-radius: 0 10px 10px 0;
-        }
-        
-        .quote-author {
-            text-align: right;
-            margin-top: 15px;
-            font-weight: bold;
-            color: #2e7d32;
-        }
-        
-        .call-to-action {
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
-            color: white;
-            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             text-align: center;
-            border-radius: 15px;
-            margin: 40px 0;
         }
-        
-        .call-to-action h2 {
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #2e7d32;
-            padding: 14px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        footer {
-            background: #1b5e20;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            border-radius: 20px 20px 0 0;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 40px 0;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #2e7d32;
+
+        .model-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
-        
+
+        .model-subtitle {
+            font-size: 1.4rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .badge.primary { background: var(--primary-color); }
+        .badge.secondary { background: var(--secondary-color); }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-title i {
+            font-size: 1.2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .performance-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 10px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .code-block {
+            background: var(--dark-color);
+            color: var(--light-color);
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            color: var(--gray-color);
+        }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .content-section {
-                padding: 25px;
-            }
-            
-            .tips-grid {
+            .main-content {
                 grid-template-columns: 1fr;
             }
             
-            .stats {
-                flex-direction: column;
+            .model-title {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Protect Our Community Environment</h1>
-            <p class="subtitle">Together we can create a cleaner, healthier, and more sustainable community for everyone</p>
-        </div>
-    </header>
-    
     <div class="container">
-        <section class="content-section">
-            <h2><i>🌍</i> Why Community Environment Matters</h2>
-            <p>A healthy community environment is essential for our wellbeing, quality of life, and the prosperity of future generations. When we protect our local environment, we're investing in cleaner air, safer neighborhoods, and sustainable resources.</p>
-            <p>Community environmental protection goes beyond just recycling - it's about creating spaces where people and nature can thrive together. From neighborhood parks to local waterways, every aspect of our community environment impacts our daily lives.</p>
+        <header class="header">
+            <h1 class="model-title">NeuralNet Pro</h1>
+            <p class="model-subtitle">Advanced Deep Learning Model for Real-World Applications</p>
             
-            <div class="quote">
-                "We won't have a society if we destroy the environment."
-                <div class="quote-author">- Margaret Mead</div>
+            <div class="badge-container">
+                <div class="badge primary">State-of-the-Art</div>
+                <div class="badge secondary">Production Ready</div>
+                <div class="badge">v2.1.0</div>
+                <div class="badge">Apache 2.0</div>
             </div>
-        </section>
-        
-        <section class="content-section">
-            <h2><i>💡</i> Simple Ways to Protect Our Environment</h2>
-            <div class="tips-grid">
-                <div class="tip-card">
-                    <h3>Reduce, Reuse, Recycle</h3>
-                    <p>Practice the 3 Rs to minimize waste. Choose products with minimal packaging, find new uses for items, and properly separate recyclables.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <h3>Conserve Water</h3>
-                    <p>Fix leaks promptly, install water-saving devices, and use drought-resistant plants in your garden to reduce water consumption.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <h3>Use Eco-Friendly Transportation</h3>
-                    <p>Walk, bike, carpool, or use public transportation when possible. This reduces air pollution and traffic congestion.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <h3>Support Local Conservation</h3>
-                    <p>Participate in local clean-up events, support community gardens, and get involved with environmental organizations in your area.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <h3>Plant Native Species</h3>
-                    <p>Native plants require less water and maintenance while providing habitat for local wildlife and preserving biodiversity.</p>
-                </div>
-                
-                <div class="tip-card">
-                    <h3>Reduce Energy Consumption</h3>
-                    <p>Switch to LED bulbs, unplug electronics when not in use, and consider energy-efficient appliances to lower your carbon footprint.</p>
+
+            <p>Transformative AI model combining cutting-edge neural architecture with practical implementation capabilities.</p>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2 class="card-title">🚀 Key Features</h2>
+                <ul class="feature-list">
+                    <li>✅ Multi-modal learning capabilities</li>
+                    <li>✅ Real-time inference optimization</li>
+                    <li>✅ Transfer learning support</li>
+                    <li>✅ Automated hyperparameter tuning</li>
+                    <li>✅ Explainable AI integration</li>
+                    <li>✅ Federated learning compatible</li>
+                    <li>✅ Multi-language support</li>
+                    <li>✅ Cloud-native deployment</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2 class="card-title">📊 Performance Metrics</h2>
+                <div class="performance-metrics">
+                    <div class="metric">
+                        <div class="metric-value">96.8%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">12ms</div>
+                        <div class="metric-label">Inference Time</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">45M</div>
+                        <div class="metric-label">Parameters</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">99.2%</div>
+                        <div class="metric-label">F1 Score</div>
+                    </div>
                 </div>
             </div>
-        </section>
-        
-        <div class="stats">
-            <div class="stat-item">
-                <div class="stat-number">75%</div>
-                <p>of litter found on beaches comes from inland sources</p>
+
+            <div class="card">
+                <h2 class="card-title">🛠 Quick Start</h2>
+                <p>Install the model package:</p>
+                <div class="code-block">
+                    pip install neuralnet-pro
+                </div>
+                
+                <p>Basic usage example:</p>
+                <div class="code-block">
+                    from neuralnet_pro import NeuralNetModel<br><br>
+                    
+                    # Initialize model<br>
+                    model = NeuralNetModel(pretrained=True)<br><br>
+                    
+                    # Make prediction<br>
+                    result = model.predict(input_data)<br>
+                    print(f"Prediction: {result}")
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number">1M+</div>
-                <p>marine animals die each year from plastic pollution</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">40%</div>
-                <p>reduction in energy use with proper home insulation</p>
+
+            <div class="card">
+                <h2 class="card-title">🏗 Architecture</h2>
+                <ul class="feature-list">
+                    <li><strong>Backbone:</strong> Transformer-based Encoder</li>
+                    <li><strong>Attention:</strong> Multi-head Self-Attention</li>
+                    <li><strong>Layers:</strong> 24 Encoder Blocks</li>
+                    <li><strong>Activation:</strong> GELU</li>
+                    <li><strong>Optimizer:</strong> AdamW</li>
+                    <li><strong>Regularization:</strong> Dropout + LayerNorm</li>
+                    <li><strong>Pre-training:</strong> Masked Language Modeling</li>
+                    <li><strong>Fine-tuning:</strong> Task-specific Heads</li>
+                </ul>
             </div>
         </div>
-        
-        <section class="call-to-action">
-            <h2>Join the Movement Today</h2>
-            <p>Your actions, no matter how small, can make a significant difference in protecting our community environment. Start with one change today and inspire others to do the same.</p>
-            <a href="#" class="btn">Get Involved</a>
-        </section>
+
+        <div class="card">
+            <h2 class="card-title">📈 Training Data</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="text-align: center;">
+                    <h3 style="color: var(--primary-color); font-size: 1.2rem;">2.5B</h3>
+                    <p style="color: var(--gray-color);">Training Samples</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="color: var(--primary-color); font-size: 1.2rem;">Multilingual</h3>
+                    <p style="color: var(--gray-color);">100+ Languages</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="color: var(--primary-color); font-size: 1.2rem;">1.2TB</h3>
+                    <p style="color: var(--gray-color);">Dataset Size</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="color: var(--primary-color); font-size: 1.2rem;">Diverse</h3>
+                    <p style="color: var(--gray-color);">Multiple Domains</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 NeuralNet Pro AI Model. Licensed under Apache 2.0</p>
+            <p>Documentation | GitHub Repository | API Reference | Community Forum</p>
+        </footer>
     </div>
-    
-    <footer>
-        <div class="container">
-            <p>© 2023 Community Environment Protection Initiative</p>
-            <p>Together, we can create a sustainable future for our community</p>
-        </div>
-    </footer>
+
+    <script>
+        // Simple animation for metrics
+        document.addEventListener('DOMContentLoaded', function() {
+            const metrics = document.querySelectorAll('.metric-value');
+            metrics.forEach(metric => {
+                const finalValue = metric.textContent;
+                metric.textContent = '0';
+                
+                let current = 0;
+                const target = parseFloat(finalValue);
+                const increment = target / 50;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        metric.textContent = finalValue;
+                        clearInterval(timer);
+                    } else {
+                        metric.textContent = current.toFixed(1);
+                    }
+                }, 50);
+            });
+        });
+    </script>
 </body>
 </html>
