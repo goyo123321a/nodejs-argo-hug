@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Blog - School Life & Study Tips</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Protecting Our Community Environment</title>
     <style>
         * {
             margin: 0;
@@ -14,7 +13,7 @@
         }
         
         body {
-            background-color: #f5f9fc;
+            background-color: #f0f8f0;
             color: #333;
             line-height: 1.6;
         }
@@ -22,542 +21,263 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, #1a5fb4 0%, #2d87d0 100%);
-            color: white;
-            padding: 30px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            font-size: 2.5rem;
-            margin-right: 15px;
-            color: #ffd43b;
-        }
-        
-        .logo h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-        }
-        
-        .logo p {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover, nav ul li a.active {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Main Content */
-        main {
-            padding: 40px 0;
-        }
-        
-        .page-header {
-            text-align: center;
-            margin-bottom: 40px;
             padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .page-header h2 {
-            color: #1a5fb4;
-            font-size: 2.5rem;
+        header {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 3rem;
             margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
-        .page-header p {
-            color: #666;
-            font-size: 1.2rem;
+        .subtitle {
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto;
+            opacity: 0.9;
         }
         
-        /* Blog Posts */
-        .blog-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .post-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
+        .content-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
         }
         
-        .post-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
         }
         
-        .post-header {
-            padding: 25px;
-            background: linear-gradient(to right, #1a5fb4, #2d87d0);
-            color: white;
-        }
-        
-        .post-header h3 {
+        h2 i {
+            margin-right: 15px;
             font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .tip-card {
+            background: #e8f5e9;
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tip-card h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .quote {
+            background: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .quote-author {
+            text-align: right;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .call-to-action {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .call-to-action h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #2e7d32;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        footer {
+            background: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2e7d32;
             margin-bottom: 10px;
         }
         
-        .post-meta {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .post-meta i {
-            margin-right: 8px;
-        }
-        
-        .post-meta span {
-            margin-right: 20px;
-        }
-        
-        .post-content {
-            padding: 25px;
-        }
-        
-        .post-content p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .post-content ul, .post-content ol {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .post-content li {
-            margin-bottom: 8px;
-        }
-        
-        .highlight {
-            background-color: #f0f7ff;
-            padding: 20px;
-            border-left: 4px solid #1a5fb4;
-            border-radius: 4px;
-            margin: 20px 0;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #1a2b4c;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            padding: 0 20px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #ffd43b;
-        }
-        
-        .footer-section p {
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            margin: 0 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background-color: #1a5fb4;
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-        }
-        
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            nav ul {
-                margin-top: 20px;
-                justify-content: center;
+            .content-section {
+                padding: 25px;
             }
             
-            nav ul li {
-                margin: 0 10px;
-            }
-            
-            .page-header h2 {
-                font-size: 2rem;
-            }
-            
-            .blog-posts {
+            .tips-grid {
                 grid-template-columns: 1fr;
             }
             
-            .footer-content {
+            .stats {
                 flex-direction: column;
             }
-        }
-        
-        /* Page Navigation */
-        .page-navigation {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        
-        .page-btn {
-            background-color: white;
-            color: #1a5fb4;
-            border: 2px solid #1a5fb4;
-            padding: 12px 25px;
-            margin: 0 10px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .page-btn:hover {
-            background-color: #1a5fb4;
-            color: white;
-        }
-        
-        .page-btn.active {
-            background-color: #1a5fb4;
-            color: white;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div>
-                        <h1>Campus Blog</h1>
-                        <p>Sharing School Life & Study Experiences</p>
-                    </div>
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#school-family">School as Home</a></li>
-                        <li><a href="#study-tips">Study Tips</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <h1>Protect Our Community Environment</h1>
+            <p class="subtitle">Together we can create a cleaner, healthier, and more sustainable community for everyone</p>
         </div>
     </header>
-
-    <!-- Main Content -->
-    <main>
-        <div class="container">
-            <!-- Page Header -->
-            <div class="page-header" id="home">
-                <h2>Welcome to Our Campus Blog</h2>
-                <p>A place where students share their experiences, thoughts, and tips about school life and learning. Explore our articles below to get inspired!</p>
+    
+    <div class="container">
+        <section class="content-section">
+            <h2><i>🌍</i> Why Community Environment Matters</h2>
+            <p>A healthy community environment is essential for our wellbeing, quality of life, and the prosperity of future generations. When we protect our local environment, we're investing in cleaner air, safer neighborhoods, and sustainable resources.</p>
+            <p>Community environmental protection goes beyond just recycling - it's about creating spaces where people and nature can thrive together. From neighborhood parks to local waterways, every aspect of our community environment impacts our daily lives.</p>
+            
+            <div class="quote">
+                "We won't have a society if we destroy the environment."
+                <div class="quote-author">- Margaret Mead</div>
             </div>
-
-            <!-- Page Navigation -->
-            <div class="page-navigation">
-                <a href="#school-family" class="page-btn active">School as Home</a>
-                <a href="#study-tips" class="page-btn">Study Tips</a>
+        </section>
+        
+        <section class="content-section">
+            <h2><i>💡</i> Simple Ways to Protect Our Environment</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Reduce, Reuse, Recycle</h3>
+                    <p>Practice the 3 Rs to minimize waste. Choose products with minimal packaging, find new uses for items, and properly separate recyclables.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Conserve Water</h3>
+                    <p>Fix leaks promptly, install water-saving devices, and use drought-resistant plants in your garden to reduce water consumption.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Use Eco-Friendly Transportation</h3>
+                    <p>Walk, bike, carpool, or use public transportation when possible. This reduces air pollution and traffic congestion.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Support Local Conservation</h3>
+                    <p>Participate in local clean-up events, support community gardens, and get involved with environmental organizations in your area.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Plant Native Species</h3>
+                    <p>Native plants require less water and maintenance while providing habitat for local wildlife and preserving biodiversity.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h3>Reduce Energy Consumption</h3>
+                    <p>Switch to LED bulbs, unplug electronics when not in use, and consider energy-efficient appliances to lower your carbon footprint.</p>
+                </div>
             </div>
-
-            <!-- Blog Posts -->
-            <div class="blog-posts">
-                <!-- School as Home Post -->
-                <article class="post-card" id="school-family">
-                    <div class="post-header">
-                        <h3>School Is My Second Home</h3>
-                        <div class="post-meta">
-                            <span><i class="fas fa-user"></i> Alex Johnson</span>
-                            <span><i class="fas fa-calendar"></i> March 15, 2023</span>
-                            <span><i class="fas fa-tag"></i> School Life</span>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <p>For many students, school is more than just a place of learning. It's a second home where we spend a significant portion of our lives. From the early morning bell to the final dismissal, school shapes our daily routines, friendships, and personal growth.</p>
-                        
-                        <p>When I first started at Lincoln High School, I saw it as just another building with classrooms and teachers. But over time, I realized it was much more. The hallways that seemed confusing at first became familiar pathways. The classmates I didn't know became close friends. The teachers I was nervous to approach became mentors and guides.</p>
-                        
-                        <div class="highlight">
-                            <p><strong>Why school feels like home:</strong> It's a place of consistency, community, and personal development where we feel safe to explore, make mistakes, and grow.</p>
-                        </div>
-                        
-                        <p>School provides us with:</p>
-                        <ul>
-                            <li><strong>A sense of belonging:</strong> Through clubs, teams, and classroom communities</li>
-                            <li><strong>Routine and structure:</strong> Creating a stable environment for learning and growth</li>
-                            <li><strong>Support systems:</strong> Teachers, counselors, and staff who genuinely care about our wellbeing</li>
-                            <li><strong>Opportunities for self-discovery:</strong> Trying new activities, subjects, and leadership roles</li>
-                            <li><strong>Lasting friendships:</strong> Bonds formed over shared experiences and challenges</li>
-                        </ul>
-                        
-                        <p>Just like a home, school has its challenges too. There are difficult assignments, stressful exams, and occasional conflicts. But these challenges help us develop resilience, problem-solving skills, and emotional intelligence—all essential tools for life beyond school walls.</p>
-                        
-                        <p>As I enter my final year, I appreciate more than ever how this institution has shaped me. The classrooms where I discovered new passions, the library where I found quiet concentration, the cafeteria where I shared laughs with friends—all these spaces have become part of my identity. School isn't just where I go to learn; it's where I've grown into the person I am today.</p>
-                    </div>
-                </article>
-
-                <!-- Study Tips Post -->
-                <article class="post-card" id="study-tips">
-                    <div class="post-header">
-                        <h3>Effective Study Habits That Actually Work</h3>
-                        <div class="post-meta">
-                            <span><i class="fas fa-user"></i> Maria Chen</span>
-                            <span><i class="fas fa-calendar"></i> April 2, 2023</span>
-                            <span><i class="fas fa-tag"></i> Academic Success</span>
-                        </div>
-                    </div>
-                    <div class="post-content">
-                        <p>After three years of high school and countless exams, I've discovered that effective studying isn't about how many hours you put in, but how you use those hours. Here are the study strategies that have helped me maintain a 4.0 GPA while still having time for extracurricular activities and social life.</p>
-                        
-                        <h4>1. The Pomodoro Technique</h4>
-                        <p>Instead of marathon study sessions, I study in focused 25-minute blocks with 5-minute breaks in between. After four cycles, I take a longer 15-30 minute break. This keeps my mind fresh and prevents burnout.</p>
-                        
-                        <h4>2. Active Recall</h4>
-                        <p>Simply rereading notes is passive and ineffective. Instead, I test myself regularly. I use flashcards, practice questions, or just cover up parts of my notes and try to recall the information. This strengthens memory pathways.</p>
-                        
-                        <div class="highlight">
-                            <p><strong>Key insight:</strong> Your brain learns better when it has to work to retrieve information, not just recognize it.</p>
-                        </div>
-                        
-                        <h4>3. Spaced Repetition</h4>
-                        <p>I review material at increasing intervals—first after one day, then three days, then a week, then two weeks. This takes advantage of how our brains consolidate memories over time.</p>
-                        
-                        <h4>4. Interleaving Subjects</h4>
-                        <p>Instead of studying one subject for hours, I mix different subjects in a single study session. Switching between math, history, and biology in one afternoon helps me make connections between different areas of knowledge and keeps me engaged.</p>
-                        
-                        <h4>5. The Feynman Technique</h4>
-                        <p>To truly understand a concept, I try to explain it in simple terms as if teaching it to someone who knows nothing about the topic. If I can't simplify it, I don't really understand it yet.</p>
-                        
-                        <h4>6. Optimal Study Environment</h4>
-                        <p>I've created a dedicated study space that's:</p>
-                        <ul>
-                            <li>Quiet and free from distractions (phone on silent in another room)</li>
-                            <li>Well-lit with natural light when possible</li>
-                            <li>Organized with all necessary materials at hand</li>
-                            <li>Comfortable but not too comfortable (a proper chair at a desk, not my bed)</li>
-                        </ul>
-                        
-                        <h4>7. Healthy Study Habits</h4>
-                        <p>Learning isn't just mental—it's physical too. I make sure to:</p>
-                        <ol>
-                            <li>Get 7-8 hours of sleep each night (critical for memory consolidation)</li>
-                            <li>Exercise regularly to boost brain function</li>
-                            <li>Stay hydrated and eat brain-healthy foods (nuts, berries, fish)</li>
-                            <li>Take real breaks that involve moving away from my study space</li>
-                        </ol>
-                        
-                        <p>The most important lesson I've learned is that effective studying is personalized. What works for your friend might not work for you. Experiment with these techniques, track what helps you retain information best, and build your own customized study system.</p>
-                    </div>
-                </article>
+        </section>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">75%</div>
+                <p>of litter found on beaches comes from inland sources</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1M+</div>
+                <p>marine animals die each year from plastic pollution</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">40%</div>
+                <p>reduction in energy use with proper home insulation</p>
             </div>
         </div>
-    </main>
-
-    <!-- Footer -->
+        
+        <section class="call-to-action">
+            <h2>Join the Movement Today</h2>
+            <p>Your actions, no matter how small, can make a significant difference in protecting our community environment. Start with one change today and inspire others to do the same.</p>
+            <a href="#" class="btn">Get Involved</a>
+        </section>
+    </div>
+    
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About This Blog</h3>
-                    <p>This campus blog is created by students for students. Our mission is to share authentic experiences and practical advice about school life and learning.</p>
-                    <p>We believe in the power of shared knowledge and community support in the educational journey.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <p><a href="#school-family" style="color: white; text-decoration: none;">School as Home</a></p>
-                    <p><a href="#study-tips" style="color: white; text-decoration: none;">Study Tips</a></p>
-                    <p><a href="#home" style="color: white; text-decoration: none;">Home</a></p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> blog@campus.edu</p>
-                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Student Center, Room 205</p>
-                    
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2023 Campus Blog. All rights reserved. | Designed by Student Web Team</p>
-            </div>
+            <p>© 2023 Community Environment Protection Initiative</p>
+            <p>Together, we can create a sustainable future for our community</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a, .page-btn').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Update active state for navigation
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                if(this.getAttribute('href').startsWith('#')) {
-                    this.classList.add('active');
-                    
-                    // Scroll to target section
-                    const targetId = this.getAttribute('href');
-                    if(targetId !== '#') {
-                        const targetSection = document.querySelector(targetId);
-                        if(targetSection) {
-                            window.scrollTo({
-                                top: targetSection.offsetTop - 80,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                }
-            });
-        });
-        
-        // Update active state for page buttons
-        document.querySelectorAll('.page-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.page-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-        
-        // Highlight current section while scrolling
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('article');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if(pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                    currentSection = '#' + section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href') === currentSection) {
-                    link.classList.add('active');
-                }
-            });
-            
-            // Also update page buttons based on scroll position
-            const schoolFamilySection = document.querySelector('#school-family');
-            const studyTipsSection = document.querySelector('#study-tips');
-            const pageButtons = document.querySelectorAll('.page-btn');
-            
-            if(window.scrollY >= schoolFamilySection.offsetTop - 150 && 
-               window.scrollY < studyTipsSection.offsetTop - 150) {
-                pageButtons[0].classList.add('active');
-                pageButtons[1].classList.remove('active');
-            } else if(window.scrollY >= studyTipsSection.offsetTop - 150) {
-                pageButtons[0].classList.remove('active');
-                pageButtons[1].classList.add('active');
-            }
-        });
-    </script>
 </body>
 </html>
